@@ -3,15 +3,19 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import Links from "./pages/Links";
+import Links from "./components/Links";
+import NavLinks from "./components/NavLinks";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <BrowserRouter>
       <Links />
+      <NavLinks />
       <Routes>
         {/* 라우트 사용 */}
         {/* v6 변경점으로 element 안에 <Home /> 이런식으로 넣어준다. */}
+        <Route path="/login" element={<Login />} />
         <Route path="/Profile/:id" element={<Profile />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/About" element={<About />} />
