@@ -8,14 +8,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {" "}
         {/* 라우트 사용 */}
-        <Route path="/" element={<Home />} />{" "}
         {/* v6 변경점으로 element 안에 <Home /> 이런식으로 넣어준다. */}
-        <Route path="/About" element={<About />} />
-        <Route path="/Profile" element={<Profile />} />
         <Route path="/Profile/:id" element={<Profile />} />
-        <Route path="/NotFound" element={<NotFound />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/" element={<Home />} />
+        {/* 낫파운드 v6 적용 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
